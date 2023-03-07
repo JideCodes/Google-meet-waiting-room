@@ -1,0 +1,80 @@
+$red: #EA4335;
+$text-color: #000000DE;
+$grey: #5f6368;
+
+@mixin buttons{
+    height: 48px;
+    padding: 5px 10px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+    border: none;
+    min-width: clamp(130px, 50px, 300px);
+    cursor: pointer;;
+
+    &:hover{
+        border: solid 1px #5f636870;
+        background-color: lighten($grey, 55%);
+        transition: all 0.3s ease-in-out;
+    }
+    &::before{
+        content: '🚨 ';
+    }
+    &::after{
+        content: ' 🔻 ';
+    }
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+header{
+    padding: 5px 20px;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        img{
+            height: 2.5rem;
+        }
+        .mail-profile{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            p{
+                text-align: right;
+            }
+            img{
+                border-radius: 50px;
+            }
+        }
+    }
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .waiting-room{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    }
+    .vid-section{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        img{
+            width: 40rem;
+            border-radius: 20px;
+        }
+    }
+}
+button{
+    @include buttons();
+}
